@@ -1,0 +1,18 @@
+@import "variables";
+
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/light.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "colors";
+@import "mixins";
+  
+h1:nth-child(1) {
+    font-size: calculate(14,30,320,1920);
+    font-family: $BaseFontFamily
+}
+
+i {
+    font-size: 100px
+}

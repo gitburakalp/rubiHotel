@@ -1,0 +1,7 @@
+@function calcPercent($value,$value2) {
+    @return ($value * 100) / $value2;
+}
+
+@function calculate($minVal,$maxVal,$minPixel,$maxPixel) {
+    @return calc(#{$minVal}px + (#{$maxVal} - #{$minVal}) * ((100vw - #{$minPixel}px) / (#{$maxPixel} - #{$minPixel})));
+}
