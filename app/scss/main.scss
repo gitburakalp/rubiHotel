@@ -46,16 +46,10 @@ h1:nth-child(1) {
     letter-spacing: normal;
     text-align: left;
     color: $color-warm-grey;
-
 }
 
-.fas-fa-arrow-right {
+.arrow-right {
     font-size: 27px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
     line-height: 1.19;
-    letter-spacing: normal;
-    text-align: center;
-    color: $color-dark;
+    color: $color-dark
 }
