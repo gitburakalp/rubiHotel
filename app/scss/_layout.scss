@@ -1,0 +1,9 @@
+a {
+    color:inherit;
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+        color:inherit;
+        text-decoration: none
+    }
+}

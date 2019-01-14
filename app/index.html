@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <header class="header">
+        <a href="#" class="header__trigger" data-trigger="header">
+            Open Menu
+        </a>
+    </header>
     <div>
         <h1 class="title">DELICACIES</h1>
     </div>
@@ -25,6 +30,13 @@
     <div>
         <i class="fal fa-arrow-right arrow-right"></i>
     </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('[data-trigger=header]').on('click',function(e){
+            e.preventDefault();
+            $(this).parent('.header').toggleClass('active');
+        });
+    </script>
 </body>
 
 </html>

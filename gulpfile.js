@@ -12,15 +12,12 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     plumber = require('gulp-plumber'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync').create();
 
 function browserSyncFunction(done) {
     browserSync.init({
-        server: {
-            baseDir: './app',
-            routes: {
-                'vendor': './node_modules'
-            }
+        server:{
+            baseDir:"./app"
         }
     });
     done();

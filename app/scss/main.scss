@@ -7,7 +7,9 @@
 
 @import "colors";
 @import "mixins";
+@import "layout";
 @import "sliders";
+@import "modules/modules.scss";
   
 h1:nth-child(1) {
     font-size: calculate(14,30,320,1920);
