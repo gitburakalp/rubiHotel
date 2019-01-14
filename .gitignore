@@ -1,3 +1,4 @@
 node_modules
 .vscode/
-app/css/*
+app/css/*.css
+app/sources/*.css
