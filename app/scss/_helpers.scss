@@ -1,0 +1,10 @@
+%flex-props {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+        position: relative;
+        min-height: 1px;
+        width: 100%
+    }
+}

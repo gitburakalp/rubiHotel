@@ -1,0 +1,31 @@
+.font {
+    &__size {
+        &--sm {
+            font-size: 16px;
+        }
+
+        &--md {
+            font-size: 22px;
+        }
+
+        &--lg {
+            font-size: 28px;
+        }
+
+        &--xl {
+            font-size: 35px;
+        }
+    }
+
+    &__weight {
+        &--black {
+            font-weight: 900;
+        }
+    }
+}
+
+.section-title {
+    font-family: $BaseFontFamily;
+    line-height: 1.17;
+    letter-spacing: normal;
+}

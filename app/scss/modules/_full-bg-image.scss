@@ -1,0 +1,19 @@
+.full-bg-image {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: $color-white-two;
+    $mh: calcPercent(910,1080);
+    height: #{$mh}vh;
+
+    .icon-more {
+        position: relative;
+        border-radius: 100%;
+        color: $color-black;
+        font-size: calculate(27,52,320,1920);
+        margin-bottom: 5%
+    }
+}

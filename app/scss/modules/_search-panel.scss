@@ -1,0 +1,55 @@
+.search-panel {
+    @extend %flex-props;
+    background-color: $color-dark;
+    padding-top: 2.214%;
+    padding-bottom: 2.214%;
+    justify-content: center;
+    color: $color-white;
+
+    &__dates {
+        @include media-breakpoint-up(md) {
+            $mw: calcPercent(297, 1504) * 1%;
+            $pl: calcPercent(42, 1504) * 1%;
+            flex: 0 0 $mw;
+            max-width: $mw;
+            padding-left: $pl;
+        }
+
+        + .search-panel__dates {
+            $ml: calcPercent(44, 1504) * 1%;
+            margin-left:$ml
+        }
+
+        .form-control {
+            font-size: calculate(20, 30, 320, 1920);
+            color: inherit;
+            padding-left: 0;
+            background-image: url('/images/svg/caret-down.svg');
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            height:unset
+        }
+    }
+
+    &__selectables {
+        @include media-breakpoint-up(md) {
+            $mw: calcPercent(122, 1504) * 1%;
+            flex: 0 0 $mw;
+            max-width: $mw;
+        }
+    }
+
+    &__submit {
+        @include media-breakpoint-up(md) {
+            $mw: calcPercent(204, 1504) * 1%;
+            flex: 0 0 $mw;
+            max-width: $mw;
+        }
+
+        .btn {
+            padding-top: 9.295%;
+            padding-bottom: 9.295%
+        }
+    }
+}

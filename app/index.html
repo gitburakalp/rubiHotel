@@ -18,23 +18,55 @@
             Open Menu
         </a>
     </header>
-    <div>
-        <h1 class="title">DELICACIES</h1>
-    </div>
-    <div>
-        <h3 class="titles">Lorem ipsum dolor <b>consectetur adipiscing elit</b></h3>
-    </div>
-    <div>
-        <p class="paragraph">Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor. </p>
-    </div>
-    <div>
-        <i class="fal fa-arrow-right arrow-right"></i>
-    </div>
+    <main class="main">
+        <section class="full-bg-image">
+            <a href="#" class="icon-more">
+                <i class="fal fa-chevron-circle-down"></i>
+            </a>
+        </section>
+        <section class="search-panel">
+            <div class="search-panel__dates">
+                <h4 class="section-title font__size--md font__weight--black">
+                    Check-In
+                </h4>
+                <input id="inpCheckInDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
+            </div>
+            <div class="search-panel__dates">
+                <h4 class="section-title font__size--md font__weight--black">
+                    Check-Out
+                </h4>
+                <input id="inpCheckInDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
+            </div>
+            <div class="search-panel__selectables">
+                <h4 class="section-title font__size--md font__weight--black">
+                   Adults
+                </h4>
+            </div>
+            <div class="search-panel__selectables">
+                <h4 class="section-title font__size--md font__weight--black">
+                    Children
+                </h4>
+            </div>
+            <div class="search-panel__submit">
+                <a href="#" class="btn btn-dull-orange font__size--md d-block">Book Now</a>
+            </div>
+        </section>
+    </main>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript">
-        $('[data-trigger=header]').on('click',function(e){
+        $('[data-trigger=header]').on('click', function (e) {
             e.preventDefault();
+            var $this = $(this);
             $(this).parent('.header').toggleClass('active');
+            if ($(this).parent('.header').hasClass('active')) {
+                setTimeout(function () {
+                    $this.text('close menu');
+                }, 150);
+            } else {
+                setTimeout(function () {
+                    $this.text('open menu');
+                }, 150);
+            }
         });
     </script>
 </body>
