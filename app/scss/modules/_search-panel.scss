@@ -1,10 +1,30 @@
-.search-panel {
+.search-box {
     @extend %flex-props;
     background-color: $color-dark;
-    padding-top: 2.214%;
-    padding-bottom: 2.214%;
+    align-items:center;
     justify-content: center;
     color: $color-white;
+    height:100vh - 84.25926vh;
+
+    .form-control {
+        font-size: calculate(20, 30, 320, 1920);
+        color: inherit;
+        padding-left: 0;
+    }
+
+    select.form-control {
+        -webkit-appearance: none;
+        height: auto;
+        background-image: url('/images/svg/chevron-down.svg');
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        height: unset;
+
+        option {
+            color:$color-black
+        }
+    }
 
     &__dates {
         @include media-breakpoint-up(md) {
@@ -15,36 +35,68 @@
             padding-left: $pl;
         }
 
-        + .search-panel__dates {
+        &::before {
+            position:absolute;
+            left:0;
+            top:0;
+            font-family: "Font Awesome 5 Pro"; 
+            font-weight: 100; 
+            content: "\f073";
+            font-size:calculate(27,30,320,1920);
+            line-height:1
+        }
+
+        +.search-box__dates {
             $ml: calcPercent(44, 1504) * 1%;
-            margin-left:$ml
+            margin-left: $ml
+        }
+
+        +.search-box__selectables {
+            $ml: calcPercent(84, 1504) * 1%;
+            margin-left: $ml
         }
 
         .form-control {
-            font-size: calculate(20, 30, 320, 1920);
-            color: inherit;
-            padding-left: 0;
             background-image: url('/images/svg/caret-down.svg');
             background-position: center right;
             background-repeat: no-repeat;
             background-size: 18px;
-            height:unset
+            height: unset
         }
     }
 
     &__selectables {
         @include media-breakpoint-up(md) {
-            $mw: calcPercent(122, 1504) * 1%;
-            flex: 0 0 $mw;
-            max-width: $mw;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: 100%;
+
+            +.search-box__selectables {
+                $pl: calcPercent(42, 1504) * 1%;
+                $ml: calcPercent(31,1504) * 1%;
+                padding-left: $pl;
+                margin-left: $ml;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 1px;
+                    bottom: 0;
+                    background-color: $color-white;
+                }
+            }
         }
     }
 
     &__submit {
         @include media-breakpoint-up(md) {
             $mw: calcPercent(204, 1504) * 1%;
+            $ml: calcPercent(76,1504) * 1%;
             flex: 0 0 $mw;
             max-width: $mw;
+            margin-left: $ml;
         }
 
         .btn {

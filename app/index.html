@@ -24,49 +24,150 @@
                 <i class="fal fa-chevron-circle-down"></i>
             </a>
         </section>
-        <section class="search-panel">
-            <div class="search-panel__dates">
+        <section class="search-box fixed mt-0">
+            <div class="search-box__dates">
                 <h4 class="section-title font__size--md font__weight--black">
                     Check-In
                 </h4>
                 <input id="inpCheckInDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
             </div>
-            <div class="search-panel__dates">
+            <div class="search-box__dates">
                 <h4 class="section-title font__size--md font__weight--black">
                     Check-Out
                 </h4>
-                <input id="inpCheckInDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
+                <input id="inpCheckOutDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
             </div>
-            <div class="search-panel__selectables">
+            <div class="search-box__selectables">
                 <h4 class="section-title font__size--md font__weight--black">
-                   Adults
+                    Adults
                 </h4>
+                <select id="selectAdults" class="form-control bg-transparent border-underline">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
-            <div class="search-panel__selectables">
+            <div class="search-box__selectables">
                 <h4 class="section-title font__size--md font__weight--black">
                     Children
                 </h4>
+                <select id="selectChild" class="form-control bg-transparent border-underline">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
-            <div class="search-panel__submit">
+            <div class="search-box__submit">
                 <a href="#" class="btn btn-dull-orange font__size--md d-block">Book Now</a>
             </div>
         </section>
+        <section class="section">
+            <h2 class="section__title font__size--xl">
+                BARLAR
+            </h2>
+        </section>
+        <section class="auto-centered-slide">
+            <div class="slider" data-type="sliders" data-slider-props="slidesPerView:'auto',centeredSlides:'true',loop:'true',spaceBetween:16">
+                <div class="slider__wrapper">
+                    <div class="slider__slide">
+                        <figure class="slider__image">
+                            <img class="img-fluid">
+                        </figure>
+                        <div class="slider__contents">
+                            <div class="prev-content">
+                                <strong>PREV</strong> / THE BAY CLUB
+                            </div>
+                            <div class="current-content">
+                                <strong>THE BAY CLUB</strong>
+                            </div>
+                            <div class="next-content">
+                                SWIMMING POOL / <strong>NEXT</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__slide">
+                        <figure class="slider__image">
+                            <img class="img-fluid">
+                        </figure>
+                        <div class="slider__contents">
+                            <div class="prev-content">
+                                <strong>PREV</strong> / THE BAY CLUB
+                            </div>
+                            <div class="current-content">
+                                <strong>THE BAY CLUB</strong>
+                            </div>
+                            <div class="next-content">
+                                SWIMMING POOL / <strong>NEXT</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__slide">
+                        <figure class="slider__image">
+                            <img class="img-fluid">
+                        </figure>
+                        <div class="slider__contents">
+                            <div class="prev-content">
+                                <strong>PREV</strong> / THE BAY CLUB
+                            </div>
+                            <div class="current-content">
+                                <strong>THE BAY CLUB</strong>
+                            </div>
+                            <div class="next-content">
+                                SWIMMING POOL / <strong>NEXT</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <i class="fal fa-arrow-left slider__controls--prev"></i>
+                <i class="fal fa-arrow-right slider__controls--next"></i>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section__title font__size--xl">
+                DELICACIES
+            </h2>
+        </section>
     </main>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
         $('[data-trigger=header]').on('click', function (e) {
             e.preventDefault();
             var $this = $(this);
             $(this).parent('.header').toggleClass('active');
+
+            setTimeout(function () {
+                renderSlidersAgain(sliders);
+            }, 300);
+
             if ($(this).parent('.header').hasClass('active')) {
                 setTimeout(function () {
                     $this.text('close menu');
                 }, 150);
+
             } else {
                 setTimeout(function () {
                     $this.text('open menu');
                 }, 150);
             }
+        });
+
+        function renderSlidersAgain(sliderItems) {
+            if (sliderItems != undefined) {
+                for (let i = 0; i < sliderItems.length; i++) {
+                    sliderItems[i].update(true);
+                }
+            }
+        }
+
+        $('.icon-more').on('click', function () {
+            var top = $(this).parent('.full-bg-image').siblings('.section').offset().top;
+            $('body,html').animate({
+                scrollTop: top
+            }, 1500);
         });
     </script>
 </body>

@@ -11,10 +11,19 @@ a {
 main {
     transition: all 300ms ease;
     margin-left: auto;
+
+    section + section:not(.mt-0) {
+        $mt: calcPercent(162,1080) * 1%;
+        margin-top: $mt;
+    }
 }
 
 h1,h2,h3,h4,h5,h6 {
     margin-bottom:0
+}
+
+figure {
+    margin-bottom: 0
 }
 
 .btn {

@@ -9,6 +9,10 @@
     $mh: calcPercent(910,1080);
     height: #{$mh}vh;
 
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
     .icon-more {
         position: relative;
         border-radius: 100%;

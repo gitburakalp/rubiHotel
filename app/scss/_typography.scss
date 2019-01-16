@@ -29,3 +29,19 @@
     line-height: 1.17;
     letter-spacing: normal;
 }
+
+.section {
+    position: relative;
+    text-align: center;
+
+    &__title {
+        font-family: $BaseFontFamily;
+        line-height: 1.43;
+        letter-spacing: calculate(13.5,17.5,320,1920);
+    }
+
+    + * {
+        $mb: calcPercent(26,1080) * 1%;
+        margin-top: $mb !important;
+    }
+}

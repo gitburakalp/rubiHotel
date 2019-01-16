@@ -1,0 +1,63 @@
+.auto-centered-slide {
+    .slider {
+
+        &__slide {
+            $width: calcPercent(1361,$canvasWithoutHeader) * 1%;
+            @include media-breakpoint-up(md) {
+                width: $width
+            }
+
+            &--active {
+                .slider__contents {
+                    opacity: 1;
+                    transition-delay: 300ms;
+                }
+            }
+        }
+
+        &__image {
+            $pb: (764 / 1361) * 100%;
+            position: relative;
+            background-color: $color-white-three;
+            padding-bottom: $pb;
+        }
+
+        &__controls {
+            $leftRightAmount: (($canvasWithoutHeader - 1361) / 2);
+            $amount: calcPercent($leftRightAmount,$canvasWithoutHeader) * 1%;
+
+            &--prev {
+                @extend %slider-control-props;
+                left: $amount;
+            }
+
+            &--next {
+                @extend %slider-control-props;
+                right: $amount;
+            }
+        }
+
+        &__contents {
+            $mt: calcPercent(27,1080) * 1%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: $mt;
+            opacity: 0;
+            transition: opacity 300ms ease;
+
+            > * {
+                flex: 0 0 auto;
+                font-family: $BaseFontFamily;
+                font-size: calculate(12,16,320,1920);
+                font-weight: 300;
+                line-height: 1.19;
+                color: $color-dark-slate-blue;
+
+                strong {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}
