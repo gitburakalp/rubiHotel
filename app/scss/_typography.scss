@@ -1,47 +1,35 @@
-.font {
-    &__size {
-        &--sm {
-            font-size: 16px;
-        }
-
-        &--md {
-            font-size: 22px;
-        }
-
-        &--lg {
-            font-size: 28px;
-        }
-
-        &--xl {
-            font-size: 35px;
-        }
-    }
-
-    &__weight {
-        &--black {
-            font-weight: 900;
-        }
-    }
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
-.section-title {
-    font-family: $BaseFontFamily;
-    line-height: 1.17;
-    letter-spacing: normal;
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400
 }
 
 .section {
-    position: relative;
-    text-align: center;
 
-    &__title {
-        font-family: $BaseFontFamily;
-        line-height: 1.43;
-        letter-spacing: calculate(13.5,17.5,320,1920);
+    &-main {
+        position: relative;
+
+        &__headings {
+            font-size: calculate(25,35,320,1920);
+            font-weight: 400;
+            letter-spacing: calculate(10.5,17.5,320,1920);
+            color: $color-dark;
+            line-height: 1.43;
+        }
     }
 
-    + * {
-        $mt: calcPercent(26,1080) * 1%;
-        margin-top: $mt !important;
+    &-headings {
+        font-weight: 700;
+
+        &--black {
+            font-weight: 900
+        }
     }
+}
+
+.text-dark {
+    color: $color-dark;
 }

@@ -1,3 +1,16 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: $BaseFontFamily;
+    font-weight:400;
+    color: $color-warm-grey
+}
+
 a {
     color: inherit;
     transition: color 300ms ease-in-out;

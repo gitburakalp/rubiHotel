@@ -1,100 +1,185 @@
-.header {
+header {
     position: fixed;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    color: $color-white;
-    transition: transform 300ms ease;
     background-color: $color-reddish;
+    height: 100vh;
     z-index: 9;
 
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all 300ms ease;
+
     @include media-breakpoint-up(md) {
-        $width: calcPercent(416, 1920) * 1%;
-        width: $width;
+        $width: calcPercent(413, 1920) * 1%;
+        width: $width
     }
 
-    &__trigger {
-        display: inline-block;
-        position: relative;
-        align-self: flex-end;
-        margin-top: auto;
-        margin-bottom: auto;
+    &:not(.slided) {
+        $ta:100% - calcPercent(143.1, 413) * 1%;
+        transform: translate3d(-$ta, 0, 0);
 
-        font-family: $BaseFontFamily;
-        font-size: calculate(10,16,320,1920);
-        line-height: 1.19;
-        letter-spacing: 4.8px;
-        text-transform: uppercase;
-        transform: rotate(-90deg);
-        transition: font-size 300ms ease-in-out, letter-spacing 300ms ease-in;
-
-        &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            display: block;
-            top: 50%;
-            width: 50px;
-            height: 1px;
-            background-color: $color-white;
+        .header-trigger {
+            font-size: calculate(12, 16, 320, 1920);
+            letter-spacing: calculate(2.4, 4.8, 320, 1920);
         }
 
-        &::before {
-            transform: translate(-125%, -50%);
-        }
-
-        &:after {
-            right: 0;
-            transform: translate(125%, -50%);
+        .side-nav {
+            opacity: 0;
         }
     }
 
-    &:not(.active) {
-        $val: 100% - calcPercent(72, 416) * 1%;
-        transform: translateX(-$val);
-
-        @include media-breakpoint-up(md) {
-            $val: 100% - calcPercent(143.1, 416) * 1%;
-            transform: translateX(-$val); 
+    &.slided {
+        .side-nav {
+            width: 90%
         }
-    }
 
-    &.active {
-        .header__trigger {
-            font-size: calculate(10,16,320,1920);
-            line-height: 1.1;
+        .header-trigger {
+            font-size: 10px;
             letter-spacing: 3px;
-
-            @include media-breakpoint-up(md) {
-                font-size: 10px
-            }
         }
 
         + main {
-            > * {
-                transition: all 500ms ease;
+            * {
+                transition: all 500ms ease-in-out;
+            }
 
-                &:not(.full-bg-image) {
-                   opacity: 0;
-                   visibility: hidden
-                }
-
-                &.full-bg-image {
-                    height: 100vh;
-                }
+            > *:not(.full-bg-image) {
+                opacity: 0;
+                visibility: hidden
+            }
+            
+            .full-bg-image {
+                height: 100vh;
             }
         }
     }
 
-    &__contents {
-        @extend %flex-props;
+    .header-trigger {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        line-height: 1.19;
+        color: $color-white;
+        display: inline-block;
+        font-weight: 400;
+        transform: rotate(-90deg);
+        transition: font-size 300ms ease;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            left: -115%;
+            background-color:$color-white
+        }
+
+        &:after {
+            content: "";
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            right: -115%;
+            background-color:$color-white
+        }
     }
 
-    &__logo {
-        $mw: calcPercent(173, 416) * 1%;
-        max-width: $mw;
-        height: auto;
+    .side-nav {
+        position: relative;
+        color: $color-white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        transition: all 300ms ease;
+
+        &__menu {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            &--main {
+                font-size: calculate(14, 20, 320, 1920);
+                font-weight: 300;
+                letter-spacing: calculate(0.7, 1, 320, 1920);
+            }
+
+            &-item {
+                position: relative;
+                overflow: hidden;
+            }
+
+            &--row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between
+            }
+        }
+
+        &__link {
+            display: block;
+            text-align: center;
+            line-height: 2.25;
+            transition: color 300ms ease;
+
+            &:hover {
+                color: $color-dark
+            }
+
+            &--circle {
+                border: 2px solid $color-white;
+                border-radius: 100%;
+                line-height: 1.4;
+
+                &.fab {
+                    padding: 4.5px 11.38px;
+                }
+
+                &.pint {
+                    padding: 4.5px 9.5px
+                }
+
+                &.twit {
+                    padding: 4.5px 7.5px
+                }
+
+                &.inst {
+                    padding: 4.5px 8.5px
+                }
+            }
+        }
+
+        &__social {
+            .side-nav__menu-item {
+                +.side-nav__menu-item {
+                    margin-left: 1rem
+                }
+            }
+        }
+
+        &__local {
+            display: flex;
+            text-align: center;
+
+            &:not(.side-nav__local--col) {
+                flex-wrap: wrap;
+                width: 100%;
+
+                >* {
+                    flex: 0 0 50%;
+                    max-width: 50%
+                }
+            }
+
+            &--col {
+                flex-direction: column
+            }
+        }
     }
 }
