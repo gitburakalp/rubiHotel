@@ -55,17 +55,9 @@
         $val: 100% - calcPercent(72, 416) * 1%;
         transform: translateX(-$val);
 
-        + main {
-            max-width: 100% - calcPercent(72,416)
-        }
-        
         @include media-breakpoint-up(md) {
             $val: 100% - calcPercent(143.1, 416) * 1%;
-            transform: translateX(-$val);
-
-            + main {
-                max-width: 100% - calcPercent(143.1,1920)
-            }
+            transform: translateX(-$val); 
         }
     }
 
@@ -81,8 +73,18 @@
         }
 
         + main {
-            $width: calcPercent(416, 1920) * 1%;
-            max-width: 100% - $width
+            > * {
+                transition: all 500ms ease;
+
+                &:not(.full-bg-image) {
+                   opacity: 0;
+                   visibility: hidden
+                }
+
+                &.full-bg-image {
+                    height: 100vh;
+                }
+            }
         }
     }
 

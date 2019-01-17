@@ -1,3 +1,41 @@
+$('[data-trigger=header]').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    $(this).parent('.header').toggleClass('active');
+
+    setTimeout(function () {
+        renderSlidersAgain(sliders);
+    }, 300);
+
+    if ($(this).parent('.header').hasClass('active')) {
+        setTimeout(function () {
+            $this.text('close menu');
+            $('html,body').animate({
+                scrollTop:0
+            },1000);
+        }, 150);
+    } else {
+        setTimeout(function () {
+            $this.text('open menu');
+        }, 150);
+    }
+});
+
+function renderSlidersAgain(sliderItems) {
+    if (sliderItems != undefined) {
+        for (let i = 0; i < sliderItems.length; i++) {
+            sliderItems[i].update(true);
+        }
+    }
+}
+
+$('.icon-more').on('click', function () {
+    var top = $(this).parent('.full-bg-image').siblings('.section').offset().top - 50;
+    $('body,html').animate({
+        scrollTop: top
+    }, 1500);
+});
+
 var sliders = [];
 
 $('[data-type="sliders"]').each(function () {

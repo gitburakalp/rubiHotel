@@ -11,6 +11,11 @@ a {
 main {
     transition: all 300ms ease;
     margin-left: auto;
+    will-change: transform,opacity;
+
+    @include media-breakpoint-up(md) {
+        max-width: 100% - calcPercent(143.1,1920);
+    }
 
     section + section:not(.mt-0) {
         $mt: calcPercent(162,1080) * 1%;
@@ -57,4 +62,9 @@ figure {
         outline: none;
         box-shadow: none
     }
+}
+
+.overflow-hidden {
+    position: fixed;
+    overflow: hidden;
 }

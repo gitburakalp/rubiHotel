@@ -41,7 +41,7 @@
     }
 
     + * {
-        $mb: calcPercent(26,1080) * 1%;
-        margin-top: $mb !important;
+        $mt: calcPercent(26,1080) * 1%;
+        margin-top: $mt !important;
     }
 }
