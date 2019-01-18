@@ -1,17 +1,19 @@
 $('[data-trigger=header]').on('click', function (e) {
     e.preventDefault();
     var $this = $(this),
-        cssClass = "slided";
+        cssClass = "is-shown";
 
-    $(this).parent('header').toggleClass(cssClass);
+        $this.parent('header').toggleClass(cssClass);
 
-    $('body,html').animate({
-        scrollTop: 0
-    }, 1500);
+    if ($this.parent('header').hasClass(cssClass)) {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1500);
+    }
 });
 
 $('.icon-more').on('click', function () {
-    var top = $(this).parent('.full-bg-image').siblings('.section-main').offset().top - 50;
+    var top = $(this).parent('.full-bg-image').siblings('.section-main').offset().top;
     $('body,html').animate({
         scrollTop: top
     }, 1500);
@@ -56,5 +58,28 @@ $('[data-type="sliders"]').each(function () {
                 }
             }
         }
+    });
+});
+
+$('main > section[data-animate=true]').each(function () {
+    var $this = $(this),
+        activeCssClass = "active";
+
+    function activeSections() {
+        var thisY = $this.offset().top,
+            winY = $(window).scrollTop(),
+            thisH = $this.innerHeight(),
+            winBottom = winY + thisH,
+            amount = 0.75;
+
+        if ((winBottom > thisY ) && winY < thisY + thisH) {
+            $this.addClass(activeCssClass);
+        } else {
+            $this.removeClass(activeCssClass);
+        }
+    }
+
+    document.addEventListener('scroll',function () {
+        activeSections();
     });
 });

@@ -14,12 +14,13 @@
 
 <body>
 
-    <header>
+    <header class="header">
+        <a href="" class="header__logo-link">
+            <img class="header__logo" src="/images/logos/logo-white.png" title="Main Page">
+        </a>
+
         <nav class="side-nav">
-            <a href="" class="side-nav__link">
-                <img class="side-nav__logo" src="/images/logos/logo-white.png" title="Main Page">
-            </a>
-            <ul class="side-nav__menu side-nav__menu--main">
+            <ul class="side-nav__menu">
                 <li class="side-nav__menu-item">
                     <a href="" class="side-nav__link">
                         ACCOMODATION
@@ -36,7 +37,7 @@
                     </a>
                 </li>
                 <li class="side-nav__menu-item">
-                    <a class="side-nav__link">
+                    <a href="" class="side-nav__link">
                         ENTERTAINMENT
                     </a>
                 </li>
@@ -51,50 +52,62 @@
                     </a>
                 </li>
             </ul>
-            <div class="side-nav__social">
-                <a href="tel:02427824222" class="">
-                    0242 7822422
-                </a>
-                <ul class="side-nav__menu side-nav__menu--row">
-                    <li class="side-nav__menu-item">
-                        <a class="side-nav__link side-nav__link--circle fab">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="side-nav__menu-item">
-                        <a class="side-nav__link side-nav__link--circle pint">
-                            <i class="fab fa-pinterest-p"></i>
-                        </a>
-                    </li>
-                    <li class="side-nav__menu-item">
-                        <a class="side-nav__link side-nav__link--circle twit">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="side-nav__menu-item">
-                        <a class="side-nav__link side-nav__link--circle inst">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="side-nav__local side-nav__local--col">
-                <h4 class="">ANTALYA</h4>
-                <h6 class="">ALANYA</h6>
-            </div>
-
-            <div class="side-nav__local">
-                <div class="side-nav__local-time">
-                    <h6 class="">LOCAL TIME</h6>
-                    <h4 class="">13:24 AM</h4>
-                </div>
-                <div class="side-nav__local-temperature">
-                    <h6 class="">LOCAL TEMPERATURE</h6>
-                    <h4 class="">35C / 43F</h4>
-                </div>
-            </div>
         </nav>
+
+        <div class="side-footer">
+            <a href="tel:" class="side__link">0242 782 4222</a>
+            <ul class="social__menu">
+                <li class="social__menu-item">
+                    <a href="" class="social__link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="social__menu-item">
+                    <a href="" class="social__link">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                </li>
+                <li class="social__menu-item">
+                    <a href="" class="social__link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="social__menu-item">
+                    <a href="" class="social__link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text-center mb-4">
+                <h2 class="section-headings section-headings--light font__size--lg">
+                    ANTALYA
+                </h2>
+                <h4 class="section-headings font__size--sm">
+                    ALANYA
+                </h4>
+            </div>
+
+            <div class="d-flex no-gutters text-center">
+                <div class="col-6">
+                    <h4 class="section-headings section-headings--light font__size--sm">
+                        LOCAL TIME
+                    </h4>
+                    <h2 class="section-headings section-headings--light font__size--lg">
+                        13:24 AM
+                    </h2>
+                </div>
+                <div class="col-6">
+                    <h4 class="section-headings section-headings--light font__size--sm">
+                        LOCAL TEMPERATURE
+                    </h4>
+                    <h2 class="section-headings section-headings--light font__size--lg">
+                        35C / 43F
+                    </h2>
+                </div>
+            </div>
+        </div>
+
         <a href="#" class="header-trigger" data-trigger="header">
             OPEN MENU
         </a>
@@ -106,21 +119,21 @@
                 <i class="fal fa-chevron-circle-down"></i>
             </a>
         </section>
-        <section class="search-box fixed mt-0">
+        <section class="search-box fixed pt-0">
             <div class="search-box__dates">
-                <h4 class="section-headings--black">
+                <h4 class="section-headings--black font__size--md">
                     Check-In
                 </h4>
                 <input id="inpCheckInDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
             </div>
             <div class="search-box__dates">
-                <h4 class="section-headings--black">
+                <h4 class="section-headings--black font__size--md">
                     Check-Out
                 </h4>
                 <input id="inpCheckOutDates" class="form-control bg-transparent border-underline" placeholder="16.02.2018">
             </div>
             <div class="search-box__selectables">
-                <h4 class="section-headings--black">
+                <h4 class="section-headings--black font__size--md">
                     Adults
                 </h4>
                 <select id="selectAdults" class="form-control bg-transparent border-underline">
@@ -131,7 +144,7 @@
                 </select>
             </div>
             <div class="search-box__selectables">
-                <h4 class="section-headings--black">
+                <h4 class="section-headings--black font__size--md">
                     Children
                 </h4>
                 <select id="selectChild" class="form-control bg-transparent border-underline">
@@ -145,12 +158,12 @@
                 <a href="#" class="btn btn-dull-orange font__size--md d-block">Book Now</a>
             </div>
         </section>
-        <section class="section-main">
+        <section class="section-main" data-animate="true">
             <h2 class="section-main__headings text-center text-uppercase">
                 Barlar
             </h2>
         </section>
-        <section class="auto-centered-slide">
+        <section class="auto-centered-slide" data-animate="true">
             <div class="slider" data-type="sliders" data-slider-props="slidesPerView:'auto',centeredSlides:'true',loop:'true',spaceBetween:16">
                 <div class="slider__wrapper">
                     <div class="slider__slide">
@@ -206,7 +219,7 @@
                 <i class="fal fa-arrow-right slider__controls--next"></i>
             </div>
         </section>
-        <section class="section-main">
+        <section class="section-main" data-animate="true">
             <h2 class="section-main__headings text-center text-uppercase">
                 Delicacies
             </h2>

@@ -30,9 +30,19 @@ main {
         max-width: 100% - calcPercent(143.1,1920);
     }
 
-    section + section:not(.mt-0) {
-        $mt: calcPercent(162,1080) * 1%;
-        margin-top: $mt;
+    > section[data-animate=true]:not(.active) {
+        opacity: 0;
+        top: 16px;
+    }
+
+    > section[data-animate=true].active {
+        opacity: 1;
+        top: 0;
+        transition: opacity 1s cubic-bezier(.4,0,.2,1), top 500ms cubic-bezier(.4,0,.2,1);
+    }
+
+    section + section:not(.pt-0) {
+        padding-top: 20vh;
     }
 }
 

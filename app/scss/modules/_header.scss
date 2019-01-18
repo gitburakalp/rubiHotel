@@ -1,35 +1,58 @@
-header {
+.header {
+    $widthAmount: calcPercent(413,1920) * 1%;
+    $leftAmount: calcPercent((413 - 143.1),1920) * 1%;
+
     position: fixed;
+    top: 0;
+    left: -$leftAmount;
+    width: $widthAmount;
+    height: 100%;
     background-color: $color-reddish;
-    height: 100vh;
+    color: $color-white;
     z-index: 9;
+    transition: all 0.33s cubic-bezier(0.33, 0, 0.2, 1);
 
     display: flex;
-    flex-wrap: nowrap;
-    transition: all 300ms ease;
+    flex-direction: column;
+    justify-content: space-around;
 
-    @include media-breakpoint-up(md) {
-        $width: calcPercent(413, 1920) * 1%;
-        width: $width
+    padding-right: 40px;
+
+    &__logo {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+
+        &-link {
+            display: block;
+            width: 100%;
+            $mw: calcPercent(173,413) * 1%;
+            max-width: $mw;
+            margin-left: auto;
+            margin-right: auto;
+            transition: all 300ms ease-in-out;
+        }
     }
 
-    &:not(.slided) {
-        $ta:100% - calcPercent(143.1, 413) * 1%;
-        transform: translate3d(-$ta, 0, 0);
+
+    &:not(.is-shown) {
 
         .header-trigger {
             font-size: calculate(12, 16, 320, 1920);
             letter-spacing: calculate(2.4, 4.8, 320, 1920);
         }
 
-        .side-nav {
+        > *:not(.header-trigger) {
             opacity: 0;
         }
     }
 
-    &.slided {
-        .side-nav {
-            width: 90%
+    &.is-shown {
+        left: 0;
+
+        > *:not(.header-trigger) {
+            transition-delay: 325ms
         }
 
         .header-trigger {
@@ -42,11 +65,11 @@ header {
                 transition: all 500ms ease-in-out;
             }
 
-            > *:not(.full-bg-image) {
+            >*:not(.full-bg-image) {
                 opacity: 0;
                 visibility: hidden
             }
-            
+
             .full-bg-image {
                 height: 100vh;
             }
@@ -55,13 +78,14 @@ header {
 
     .header-trigger {
         position: absolute;
-        right: 0;
+        right: 14%;
         top: 50%;
         line-height: 1.19;
         color: $color-white;
         display: inline-block;
         font-weight: 400;
-        transform: rotate(-90deg);
+        transform: rotate(270deg) translateX(50%);
+        transform-origin: right bottom;
         transition: font-size 300ms ease;
 
         &:before {
@@ -72,7 +96,7 @@ header {
             width: 100%;
             height: 1px;
             left: -115%;
-            background-color:$color-white
+            background-color: $color-white
         }
 
         &:after {
@@ -84,7 +108,7 @@ header {
             width: 100%;
             height: 1px;
             right: -115%;
-            background-color:$color-white
+            background-color: $color-white
         }
     }
 
@@ -92,94 +116,71 @@ header {
         position: relative;
         color: $color-white;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        height: 100%;
-        transition: all 300ms ease;
+        margin-top: 9vh;
 
         &__menu {
             list-style: none;
             padding-left: 0;
             margin-bottom: 0;
 
-            &--main {
-                font-size: calculate(14, 20, 320, 1920);
-                font-weight: 300;
-                letter-spacing: calculate(0.7, 1, 320, 1920);
+            &-item {
+                text-align: center;
+
+                .side-nav__link {
+                    font-size: calculate(14,18,320,767);
+                    font-weight: 300;
+                    line-height: 2.25;
+                    transition: color 330ms ease-in-out;
+
+                    @include media-breakpoint-up(md) {
+                        font-size: calculate(12,20,768,1920);
+                    }
+
+                    &:hover {
+                        color: $color-dark
+                    }
+                }
             }
+        }
+    }
+
+    .side-footer {
+        .social__menu {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 5vh;
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
 
             &-item {
-                position: relative;
-                overflow: hidden;
-            }
-
-            &--row {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between
-            }
-        }
-
-        &__link {
-            display: block;
-            text-align: center;
-            line-height: 2.25;
-            transition: color 300ms ease;
-
-            &:hover {
-                color: $color-dark
-            }
-
-            &--circle {
-                border: 2px solid $color-white;
-                border-radius: 100%;
-                line-height: 1.4;
-
-                &.fab {
-                    padding: 4.5px 11.38px;
+                text-align: center;
+                
+                .social__link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 100%;
+                    border: 2px solid $color-white;
                 }
 
-                &.pint {
-                    padding: 4.5px 9.5px
-                }
-
-                &.twit {
-                    padding: 4.5px 7.5px
-                }
-
-                &.inst {
-                    padding: 4.5px 8.5px
-                }
-            }
-        }
-
-        &__social {
-            .side-nav__menu-item {
-                +.side-nav__menu-item {
+                + .social__menu-item {
                     margin-left: 1rem
                 }
             }
         }
+    }
 
-        &__local {
-            display: flex;
-            text-align: center;
+    .side__link {
+        display: block;
+        font-size: calculate(18,28,768,1920);
+        text-align: center;
+        line-height: 1.18;
+        letter-spacing: calculate(0.7,1.4,768,1920);
 
-            &:not(.side-nav__local--col) {
-                flex-wrap: wrap;
-                width: 100%;
-
-                >* {
-                    flex: 0 0 50%;
-                    max-width: 50%
-                }
-            }
-
-            &--col {
-                flex-direction: column
-            }
-        }
+        margin-bottom: 2vh;
     }
 }

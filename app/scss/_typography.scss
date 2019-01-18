@@ -19,10 +19,18 @@ h1,h2,h3,h4,h5,h6 {
             color: $color-dark;
             line-height: 1.43;
         }
+
+        + section {
+            padding-top: 5vh !important
+        }
     }
 
     &-headings {
         font-weight: 700;
+
+        &--light {
+            font-weight: 300;
+        }
 
         &--black {
             font-weight: 900
@@ -32,4 +40,36 @@ h1,h2,h3,h4,h5,h6 {
 
 .text-dark {
     color: $color-dark;
+}
+
+.font {
+    &__size {
+        &--sm {
+            font-size: calculate(12,14,320,767);
+            line-height: 1.14;
+
+            @include media-breakpoint-up(md) {
+                font-size: calculate(12,16,768,1920);
+            }
+        }
+
+        &--md {
+            font-size: calculate(13,16,320,767);
+            line-height: 1.14;
+
+            @include media-breakpoint-up(md) {
+                font-size: calculate(16,22,768,1920);
+            }
+        }
+
+        &--lg {
+            font-size: calculate(16,20,320,767);
+            line-height: 1.14;
+
+            @include media-breakpoint-up(md) {
+                font-size: calculate(20,28,768,1920);
+                line-height: 1.14
+            }
+        }
+    }
 }

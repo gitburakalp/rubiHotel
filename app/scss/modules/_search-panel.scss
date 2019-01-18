@@ -7,7 +7,7 @@
     height:100vh - 84.25926vh;
 
     .form-control {
-        font-size: calculate(20, 30, 320, 1920);
+        font-size: calculate(20, 30, 768, 1920);
         color: inherit;
         padding-left: 0;
     }
@@ -18,7 +18,7 @@
         background-image: url('/images/svg/chevron-down.svg');
         background-position: center right;
         background-repeat: no-repeat;
-        background-size: 18px;
+        background-size: 1vw;
         height: unset;
 
         option {
@@ -42,7 +42,7 @@
             font-family: "Font Awesome 5 Pro"; 
             font-weight: 100; 
             content: "\f073";
-            font-size:calculate(27,30,320,1920);
+            font-size:calculate(20,30,768,1920);
             line-height:1
         }
 
@@ -60,7 +60,7 @@
             background-image: url('/images/svg/caret-down.svg');
             background-position: center right;
             background-repeat: no-repeat;
-            background-size: 18px;
+            background-size: 8%;
             height: unset
         }
     }
