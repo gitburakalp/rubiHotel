@@ -13,11 +13,6 @@
 @import "helpers";
 @import "sliders";
 @import "modules/modules.scss";
-  
-h1:nth-child(1) {
-    font-size: calculate(14,30,320,1920);
-    font-family: $BaseFontFamily;
-}
 
 .title {
     font-size: 35px;

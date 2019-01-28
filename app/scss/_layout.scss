@@ -8,7 +8,13 @@ html {
 body {
     font-family: $BaseFontFamily;
     font-weight:400;
-    color: $color-warm-grey
+    line-height: 1.75;
+    color: $color-warm-grey;
+    font-size: 14px;
+
+    @include media-breakpoint-up(md) {
+        font-size: calculate(12,16,768,1920);
+    }
 }
 
 a {
@@ -90,4 +96,8 @@ figure {
 .overflow-hidden {
     position: fixed;
     overflow: hidden;
+}
+
+.text-reddish {
+    color: $color-reddish !important
 }

@@ -32,6 +32,10 @@ h1,h2,h3,h4,h5,h6 {
             font-weight: 300;
         }
 
+        &--regular {
+            font-weight: 400;
+        }
+
         &--black {
             font-weight: 900
         }
@@ -44,7 +48,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .font {
     &__size {
-        &--sm {
+        &--xs {
             font-size: calculate(12,14,320,767);
             line-height: 1.14;
 
@@ -53,7 +57,7 @@ h1,h2,h3,h4,h5,h6 {
             }
         }
 
-        &--md {
+        &--sm {
             font-size: calculate(13,16,320,767);
             line-height: 1.14;
 
@@ -62,14 +66,52 @@ h1,h2,h3,h4,h5,h6 {
             }
         }
 
-        &--lg {
-            font-size: calculate(16,20,320,767);
+        &--md {
+            font-size: calculate(12,19,320,767);
             line-height: 1.14;
 
             @include media-breakpoint-up(md) {
-                font-size: calculate(20,28,768,1920);
+                font-size: calculate(19,28,768,1920);
                 line-height: 1.14
             }
+        }
+
+        &--lg {
+            font-size: calculate(16,26,320,767);
+            line-height: 1.14;
+
+            @include media-breakpoint-up(md) {
+                font-size: calculate(26,35,768,1920);
+                line-height: 1.14
+            }
+        }
+
+        &--xl {
+            font-size: calculate(20,30,320,767);
+            line-height: 1.14;
+
+            @include media-breakpoint-up(md) {
+                font-size: calculate(30,40,768,1920);
+                line-height: 1.14
+            }
+        }
+    }
+
+    &__weight {
+        &--light {
+            font-weight: 300
+        }
+
+        &--regular {
+            font-weight: 400
+        }
+
+        &--bold {
+            font-weight: 700
+        }
+
+        &--black {
+            font-weight: 900
         }
     }
 }
