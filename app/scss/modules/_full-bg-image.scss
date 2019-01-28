@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: flex-end;
     background-color: $color-white-two;
-    $mh: calcPercent(910,1080);
+    $mh: calcPercent(613,667);
     height: #{$mh}vh;
 
     background-repeat:no-repeat;
@@ -14,11 +14,20 @@
     background-position:center;
     transition: all 500ms;
 
+    @include media-breakpoint-up(md) {
+        $mh: calcPercent(910,1080);
+        height: #{$mh}vh;
+    }
+
     .icon-more {
         position: relative;
         border-radius: 100%;
         color: $color-black;
         font-size: calculate(27,52,320,1920);
-        margin-bottom: 5%
+        margin-bottom: 4rem;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 5%;
+        }
     }
 }

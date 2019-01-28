@@ -29,6 +29,14 @@
             &__image {
                 position: relative;
                 background-color: $color-white-three;
+
+                img {
+                    @include media-breakpoint-down(sm) {
+                        $minH: calcPercent(565,667);
+                        min-height: #{$minH}vh;
+                        object-fit: cover;
+                    }
+                }
             }
     
             &__controls {
@@ -37,12 +45,22 @@
     
                 &--prev {
                     @extend %slider-control-props;
-                    left: $amount;
+                    left: 0;
                 }
     
                 &--next {
                     @extend %slider-control-props;
-                    right: $amount;
+                    right: 0;
+                }
+
+                @include media-breakpoint-up(md) {
+                    &--prev {
+                        left: $amount;
+                    }
+        
+                    &--next {
+                        right: $amount;
+                    }
                 }
             }
     

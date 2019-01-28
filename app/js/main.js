@@ -3,13 +3,22 @@ $('[data-trigger=header]').on('click', function (e) {
     var $this = $(this),
         cssClass = "is-shown";
 
-        $this.parent('header').toggleClass(cssClass);
+        $('header').toggleClass(cssClass);
+        $('html,body').toggleClass('overflow-hidden');
 
-    if ($this.parent('header').hasClass(cssClass)) {
+    if ($('header').hasClass(cssClass)) {
         $('body,html').animate({
             scrollTop: 0
         }, 1500);
     }
+});
+
+$('[data-dismiss="header"]').on('click',function(e){
+    e.preventDefault();
+    var $this = $(this),
+        cssClass = "is-shown";
+    
+    $('header').removeClass('is-shown');
 });
 
 $('.icon-more').on('click', function () {

@@ -2,11 +2,13 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Rubi">
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
     </style>
@@ -15,105 +17,121 @@
 <body>
 
     <header class="header">
-        <a href="" class="header__logo-link">
-            <img class="header__logo" src="/images/logos/logo-white.png" title="Main Page">
+        <a href="" class="header__icon">
+            <img class="img-fluid" alt="Header Logo" src="images/logos/logo-white.png">
         </a>
-
-        <a href=""></a>
 
         <nav class="side-nav">
             <ul class="side-nav__menu">
                 <li class="side-nav__menu-item">
-                    <a href="" class="side-nav__link">
-                        ACCOMODATION
+                    <a href="" class="side-nav__menu-link">
+                        ACCOMMADATION
                     </a>
                 </li>
                 <li class="side-nav__menu-item">
-                    <a href="" class="side-nav__link">
+                    <a href="" class="side-nav__menu-link">
                         DELICACIES
                     </a>
                 </li>
                 <li class="side-nav__menu-item">
-                    <a href="" class="side-nav__link">
+                    <a href="" class="side-nav__menu-link">
                         BARLAR
                     </a>
                 </li>
                 <li class="side-nav__menu-item">
-                    <a href="" class="side-nav__link">
+                    <a href="" class="side-nav__menu-link">
                         ENTERTAINMENT
                     </a>
                 </li>
                 <li class="side-nav__menu-item">
-                    <a href="" class="side-nav__link">
+                    <a href="" class="side-nav__menu-link">
                         RUBI SPA
                     </a>
                 </li>
                 <li class="side-nav__menu-item">
-                    <a href="" class="side-nav__link">
+                    <a href="" class="side-nav__menu-link">
                         CONCIERGE
+                    </a>
+                </li>
+                <li class="side-nav__menu-item d-md-none">
+                    <a href="" class="side-nav__menu-link " data-dismiss="header">
+                        CLOSE
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <div class="side-footer">
-            <a href="tel:" class="side__link">0242 782 4222</a>
-            <ul class="social__menu">
-                <li class="social__menu-item">
-                    <a href="" class="social__link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="social__menu-item">
-                    <a href="" class="social__link">
-                        <i class="fab fa-pinterest-p"></i>
-                    </a>
-                </li>
-                <li class="social__menu-item">
-                    <a href="" class="social__link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="social__menu-item">
-                    <a href="" class="social__link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
-
-            <div class="text-center mb-4">
-                <h2 class="section-headings section-headings--light font__size--lg">
-                    ANTALYA
-                </h2>
-                <h4 class="section-headings font__size--sm">
-                    ALANYA
-                </h4>
-            </div>
-
-            <div class="d-flex no-gutters text-center">
-                <div class="col-6">
-                    <h4 class="section-headings section-headings--light font__size--sm">
-                        LOCAL TIME
-                    </h4>
-                    <h2 class="section-headings section-headings--light font__size--lg">
-                        13:24 AM
-                    </h2>
+        <section class="header__footer">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h3 class="">0242 7824222</h3>
                 </div>
-                <div class="col-6">
-                    <h4 class="section-headings section-headings--light font__size--sm">
-                        LOCAL TEMPERATURE
-                    </h4>
-                    <h2 class="section-headings section-headings--light font__size--lg">
-                        35C / 43F
-                    </h2>
+                <div class="col-12">
+                    <ul class="social__menu">
+                        <li class="social__menu-item">
+                            <a href="" class="social__menu-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="social__menu-item">
+                            <a href="" class="social__menu-link">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                        <li class="social__menu-item">
+                            <a href="" class="social__menu-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="social__menu-item">
+                            <a href="" class="social__menu-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <a href="#" class="header-trigger" data-trigger="header">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h3 class="">ANTALYA</h3>
+                    <h5 class="">ALANYA</h5>
+                </div>
+            </div>
+
+            <div class="row text-center align-items-center no-gutters w-100">
+                <div class="col-6">
+                    <h5 class="" style="font-size:1rem">LOCAL TIME</h5>
+                    <h3 class="">13:24 AM</h3>
+                </div>
+                <div class="col-6">
+                    <h5 class="" style="font-size:1rem;font-weight: 300">LOCAL TEMPERATURE</h5>
+                    <h3 class="">35C / 43F</h3>
+                </div>
+            </div>
+        </section>
+
+        <a href="" class="header__trigger" data-trigger="header">
+            <i class="fal fa-angle-up header__trigger-icon"></i>
             OPEN MENU
         </a>
+
     </header>
+
+    <a href="" class="btn btn-dull-orange book-now__mobile-trigger">
+        <div class="btn__icon btn__icon--fixed">
+            <object id="svgPalmObject" data="images/svg/ring-icon.svg" type="image/svg+xml">
+                asd</object>
+        </div>
+        <div class="btn__content btn__icon--fixed">
+            BOOK NOW
+        </div>
+    </a>
+
+    <a href="" class="header__mobile-trigger" data-trigger="header">
+        <i class="fal fa-align-left"></i>
+        Menu
+    </a>
 
     <main class="main">
         <section class="full-bg-image">
@@ -165,7 +183,7 @@
                 TITLE 1
             </h2>
         </section>
-        <section class="slider slider--centered-slider" data-type="sliders" data-slider-props="slidesPerView:'auto',centeredSlides:'true',loop:'true',spaceBetween:16">
+        <section class="slider slider--centered-slider" data-type="sliders" data-slider-props="slidesPerView:'auto',centeredSlides:'true',loop:'true',spaceBetween:15">
             <div class="slider__wrapper">
                 <div class="slider__slide">
                     <figure class="slider__image">
@@ -224,7 +242,7 @@
                 TITLE 2
             </h2>
         </section>
-        <section class="slider slider--half-slider" data-type="sliders" data-slider-props="slidesPerView:'auto'">
+        <section class="slider slider--half-slider" data-type="sliders" data-slider-props="slidesPerView:'auto',spaceBetween:15">
             <div class="slider__wrapper">
                 <div class="slider__slide">
                     <figure class="slider__image">
@@ -236,7 +254,9 @@
                             <strong>consectetur adipiscing elit.</strong>
                         </h1>
                         <p>
-                            Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor. 
+                            Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis
+                            ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna
+                            mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor.
                         </p>
                     </div>
                 </div>
@@ -250,7 +270,9 @@
                             <strong>consectetur adipiscing elit.</strong>
                         </h1>
                         <p>
-                            Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor. 
+                            Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis
+                            ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna
+                            mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor.
                         </p>
                     </div>
                 </div>
@@ -264,7 +286,9 @@
                             <strong>consectetur adipiscing elit.</strong>
                         </h1>
                         <p>
-                            Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor. 
+                            Nulla dictum ex quam. Suspendisse dictum auctor neque, eget auctor ipsum mattis quis. Duis
+                            ullamcorper nulla id pulvinar molestie. Pellentesque porta, velit ut porta suscipit, magna
+                            mi commodo massa, in elementum felis lectus sit amet ligula. Donec non consequat dolor.
                         </p>
                     </div>
                 </div>

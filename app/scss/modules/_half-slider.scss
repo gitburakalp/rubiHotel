@@ -24,6 +24,10 @@
             }
 
             &__contents {
+                @include media-breakpoint-down(sm) {
+                    text-align: center;
+                }
+
                 @include media-breakpoint-up(md) {
                     $width: calcPercent((1377 - 802),1377) * 1%;
                     $pa: calcPercent(81,$canvasWithoutHeader) * 1%;
@@ -33,11 +37,16 @@
 
                 .section-headings--regular {
                     word-wrap: break-word;
-                    margin-bottom: 2rem
+                    margin-bottom: 2rem;
                 }
             }
 
             &__controls {
+
+                @include media-breakpoint-down(sm) {
+                    display: none
+                } 
+
                 $left: calcPercent(802,$canvasWithoutHeader) * 1% + calcPercent(81,$canvasWithoutHeader) * 1%;
                 position: absolute;
                 left:$left;
